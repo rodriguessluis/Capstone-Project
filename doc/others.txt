@@ -1,4 +1,4 @@
-Just
+Justificava 
 
 O crescimento populacional e a expansão urbana têm provocado um aumento significativo no
 fluxo de veículos nas cidades, resultando em congestionamentos, longos tempos de espera,
@@ -10,7 +10,7 @@ eficiência da circulação urbana.
 
 
 
-Form d probl
+Formulação do problema
 
 O problema desta investigação está relacionado com a utilização de sistemas semafóricos de
 temporização fixa, que não conseguem responder adequadamente às variações do fluxo de
@@ -27,7 +27,7 @@ acompanhamento do sistema, a análise dos dados e a intervenção dos responsáv
 do tráfego.
 
 
-Hipót
+Hipótese
 
 Se for desenvolvido um sistema de semáforo inteligente capaz de ajustar
 automaticamente os tempos de sinalização com base nos dados do tráfego em tempo
