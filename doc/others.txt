@@ -1,0 +1,43 @@
+Just
+
+O crescimento populacional e a expansão urbana têm provocado um aumento significativo no
+fluxo de veículos nas cidades, resultando em congestionamentos, longos tempos de espera,
+consumo excessivo de combustível e maior emissão de poluentes. Em muitos locais, os
+semáforos ainda funcionam com temporizações fixas, que não consideram as variações do
+tráfego ao longo do dia. Como consequência, podem ocorrer situações em que uma via
+permanece livre enquanto outra apresenta uma grande concentração de veículos, reduzindo a
+eficiência da circulação urbana.
+
+
+
+Form d probl
+
+O problema desta investigação está relacionado com a utilização de sistemas semafóricos de
+temporização fixa, que não conseguem responder adequadamente às variações do fluxo de
+veículos nas vias urbanas. Essa limitação contribui para a formação de congestionamentos, o
+aumento do tempo de espera, o desperdício de combustível e a redução da eficiência da
+circulação, especialmente nos horários de maior movimento ou em situações atípicas, como
+acidentes, obras e eventos.
+
+Embora os sistemas semafóricos adaptativos permitam ajustar os tempos de sinalização com
+base nas condições reais do tráfego, ainda existe a necessidade de integrar essa funcionalidade
+a uma plataforma web que possibilite a monitorização remota e em tempo real do estado dos
+semáforos e das condições de circulação. A ausência dessa integração dificulta o
+acompanhamento do sistema, a análise dos dados e a intervenção dos responsáveis pela gestão
+do tráfego.
+
+
+Hipót
+
+Se for desenvolvido um sistema de semáforo inteligente capaz de ajustar
+automaticamente os tempos de sinalização com base nos dados do tráfego em tempo
+real e de disponibilizar essas informações numa plataforma web, então será possível
+reduzir o tempo de espera e a formação de filas, melhorar a fluidez do tráfego urbano e
+tornar mais eficiente a monitorização das interseções semaforizadas.
+
+Essa hipótese pode ser testada por meio da comparação entre um cenário com temporização
+fixa e outro com controlo adaptativo, utilizando indicadores como tempo médio de espera,
+comprimento das filas, número de paragens e tempo total de percurso. A utilização de
+simulação ou de um protótipo permite avaliar o desempenho antes da implementação em
+ambiente real; trabalhos semelhantes empregam sensores, processamento de dados e
+simuladores para validar sistemas de controlo adaptativo.
