@@ -1,0 +1,261 @@
+<!---
+..............................................................................................................................
+..............................................................................................................................
+........................................#:#................+#:#:#:#*:......#*#...#%##$#%#%#.\....#:@#:#:#:#:+.................
+.......................................#:#............. /:*#:#:#:#*:.\....#*#...#%##$#%#%##.\...#:@#:#:#:#:+..................
+......................................#:#.............#+#          #:#..    ...#$#        #&*..#@#............................
+.....................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#.............................
+....................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#@@@@@@@@+.....................
+...................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#@@@@@@@@+......................
+..................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#................................
+.................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#.................................
+................................#:##:#:#:#:#+...\:.#:#:#:#:#:./....#+#....#$#$#$#$#$./...#:@#:#:#:#:+.........................
+..............................#:#:#:#:#:#:#+...*#;:#:#:#:#:#/.....#+#...$#$#$#$#$#./....#:@#:#:#:#:+..........................
+..............................................................................................................................
+....................#$#.........................+|+.........#&#       #$#..#+#@#@#:#*\................+|+.....................
+...................#$#.......................+:+*+*........#&#       #$#...#+#@#@#:#*#\............+:+*+*.....................
+..................#$#......................+:+  +:+.......#&#       #$#...#+#       |||..........+:+  +:+.....................
+.................#$#.....................+:+    +:+......#&#       #$#...#+#       ||/.........+:+    +:+.....................
+................#$#....................+:+      +:+.....#&#       #$#...#+#@@@@@@@|/.........+:+      +:+.....................
+...............#$#...................+:+&+&&&&&&+:+....#&#       #$#...#+#$$$$$$//.........+:+&+&&&&&&+:+.....................
+..............#$#..................+:++££££££££++:+...#&#       #$#...#+#      \\\.......+:++££££££££++:+.....................
+.............#$#.................+:+            +:+..#&#       #$#...#+#       #:#\....+:+            +:+.....................
+............#$#:#:#:#:#:#:+....+:+              +:+..\:#:#:#:#.*/...#+#        #:#|..+:+              +:+.....................
+...........#$#:#:#:#:#:#:+...+:+                +:+...\##:#:#../...#+#         #:#|+:+                +:+.....................
+..............................................................................................................................
+..............................................................................................................................
+______________________________________________________________________________________________________________________________
+______________________________________________________Grupo Nº 1______________________________________________________________
+_Tema: Desenvolvimento de um Sistema de Semáforo Inteligente Adaptativo com Monitorização Web para a Gestão de Tráfego Urbano_
+______________________________________________________________________________________________________________________________
+..............................................................................................................................
+..............................................................................................................................
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    @charset "UTF-8";
+
+:root {
+    /*Cores princípais*/
+    --fundo: #0F172A;
+    --cartoes: #1E293B;
+    --borda_linha: #334155;
+    --texto_p: #F1F5F9;
+    --texto_s: #94A3B8;
+
+    /*Cores dos estados dos semáforos*/
+    --verde_aceso: #4ade80;
+    --verde_apagado: #14532d;
+    --vermelho_aceso: #f87171;
+    --vermelho_apagado: #4a2323;
+    --amarelo_aceso: #fbbf24;
+    --amarelo_apagado: #4a3f17;
+    --caixa_semaforo: #0b1220;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto_p);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 10px;
+    margin: 30px;
+}
+
+h1 {
+    padding: 2px;
+    margin: 5px;
+}
+
+p {
+    color: var(--texto_s);
+    padding: 2px;
+    margin: 5px;
+}
+
+main {
+    margin: 30px;
+}
+
+#sessao_1 {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.tty {
+    width: 25%;
+    background-color: var(--cartoes); 
+    border: 2px solid var(--borda_linha) ;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    
+}
+
+.numeros {
+    color: #F1F5F9; 
+    font-weight: bolder; 
+    font-size: 25px;
+}
+
+.percentagem {
+    color: #4ADE80;
+}
+
+#sessao_2 {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.artigo_semaforo {
+    display: inline-flex;
+    justify-content: baseline;
+    width: 30%;
+    background-color: var(--cartoes); 
+    border: 2px solid var(--borda_linha) ;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.semaforo {
+    width: 55px;
+    background-color: var(--caixa_semaforo);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.vermelho {
+    width: 25px;
+    height: 25px;
+    background-color: var(--vermelho_apagado);
+    border-radius: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.amarelo {
+    width: 25px;
+    height: 25px;
+    background-color: var(--amarelo_apagado);
+    border-radius: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.verde {
+    width: 25px;
+    height: 25px;
+    background-color: var(--verde_aceso);
+    border-radius: 50px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.texto_semaforo {
+    padding: 10px;
+}
+</style>
+
+<body>
+    <header>
+        <h1>Dashboard </h1>
+        <p>Semáforo Inteligente - Estado, Contagem, Históricos e Alertas</p>
+    </header>
+
+    <main>
+        <section id="sessao_1">
+            <article class="tty">
+                <p>Veículos hoje</p>
+                <p class="numeros">1248</p>
+                <p class="percentagem">+6% vs ontem</p>
+            </article>
+            <article class="tty">
+                <p>Espera média</p>
+                <p class="numeros">18 s</p>
+                <p class="percentagem">32% nemos que o ciclo fixo</p>
+            </article>
+            <article class="tty">
+                <p>Fila máxima</p>
+                <p class="numeros">9 veíc.</p>
+                <p>Via Oeste, às 18h</p>
+            </article>
+            <article class="tty">
+                <p>Ciclos concluídos</p>
+                <p class="numeros">214</p>
+                <p>Modo adaptivo</p>
+            </article>
+        </section>
+
+        <section id="sessao_2">
+            <article class="artigo_semaforo">
+                <div class="semaforo">
+                    <div class="vermelho"></div>
+                    <div class="amarelo"></div>
+                    <div class="verde"></div>
+                </div>
+                <div class="texto_semaforo">
+                    <p>Norte</p>
+                    <p style="font-size: 24px; font-weight: bolder; color: #4ade80;">Verde</p>
+                    <p style="color: #F1F5F9; font-weight: bold;">14 s restantes</p>
+                    <p>3 veículos na fila</p>
+                </div>
+            </article>
+            <article class="artigo_semaforo">
+                <div class="semaforo">
+                    <div class="vermelho"></div>
+                    <div class="amarelo"></div>
+                    <div class="verde"></div>
+                </div>
+                <div class="texto_semaforo">
+                    <p>Sul</p>
+                    <p style="font-size: 24px; font-weight: bolder; color: #4ade80;">Verde</p>
+                    <p style="color: #F1F5F9; font-weight: bold;">14 s restantes</p>
+                    <p>1 veículos na fila</p>
+                </div>
+            </article>
+            <article class="artigo_semaforo">
+                <div class="semaforo">
+                    <div class="vermelho" style="background-color: #f87171;"></div>
+                    <div class="amarelo"></div>
+                    <div class="verde" style="background-color: #14532d;"></div>
+                </div>
+                <div class="texto_semaforo">
+                    <p>Este</p>
+                    <p style="font-size: 24px; font-weight: bolder; color: #f87171;">Vermelho</p>
+                    <p style="color: #F1F5F9; font-weight: bold;">Verde em 17 s</p>
+                    <p>0 veículos na fila</p>
+                </div>
+            </article>
+            <article class="artigo_semaforo">
+                <div class="semaforo">
+                    <div class="vermelho" style="background-color: #f87171;"></div>
+                    <div class="amarelo"></div>
+                    <div class="verde" style="background-color: #14532d;"></div>
+                </div>
+                <div class="texto_semaforo">
+                    <p>Oeste</p>
+                    <p style="font-size: 24px; font-weight: bolder; color: #f87171;">Vermelho</p>
+                    <p style="color: #F1F5F9; font-weight: bold;">Verde em 17 s</p>
+                    <p>5 veículos na fila</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    
+</body>
+</html>

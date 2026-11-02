@@ -1,0 +1,299 @@
+<!---
+..............................................................................................................................
+..............................................................................................................................
+........................................#:#................+#:#:#:#*:......#*#...#%##$#%#%#.\....#:@#:#:#:#:+.................
+.......................................#:#............. /:*#:#:#:#*:.\....#*#...#%##$#%#%##.\...#:@#:#:#:#:+..................
+......................................#:#.............#+#          #:#..    ...#$#        #&*..#@#............................
+.....................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#.............................
+....................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#@@@@@@@@+.....................
+...................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#@@@@@@@@+......................
+..................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#................................
+.................................#:#.............#+#          #:#...#+#...#$#        #&#..#@#.................................
+................................#:##:#:#:#:#+...\:.#:#:#:#:#:./....#+#....#$#$#$#$#$./...#:@#:#:#:#:+.........................
+..............................#:#:#:#:#:#:#+...*#;:#:#:#:#:#/.....#+#...$#$#$#$#$#./....#:@#:#:#:#:+..........................
+..............................................................................................................................
+....................#$#.........................+|+.........#&#       #$#..#+#@#@#:#*\................+|+.....................
+...................#$#.......................+:+*+*........#&#       #$#...#+#@#@#:#*#\............+:+*+*.....................
+..................#$#......................+:+  +:+.......#&#       #$#...#+#       |||..........+:+  +:+.....................
+.................#$#.....................+:+    +:+......#&#       #$#...#+#       ||/.........+:+    +:+.....................
+................#$#....................+:+      +:+.....#&#       #$#...#+#@@@@@@@|/.........+:+      +:+.....................
+...............#$#...................+:+&+&&&&&&+:+....#&#       #$#...#+#$$$$$$//.........+:+&+&&&&&&+:+.....................
+..............#$#..................+:++££££££££++:+...#&#       #$#...#+#      \\\.......+:++££££££££++:+.....................
+.............#$#.................+:+            +:+..#&#       #$#...#+#       #:#\....+:+            +:+.....................
+............#$#:#:#:#:#:#:+....+:+              +:+..\:#:#:#:#.*/...#+#        #:#|..+:+              +:+.....................
+...........#$#:#:#:#:#:#:+...+:+                +:+...\##:#:#../...#+#         #:#|+:+                +:+.....................
+..............................................................................................................................
+..............................................................................................................................
+______________________________________________________________________________________________________________________________
+______________________________________________________Grupo Nº 1______________________________________________________________
+_Tema: Desenvolvimento de um Sistema de Semáforo Inteligente Adaptativo com Monitorização Web para a Gestão de Tráfego Urbano_
+______________________________________________________________________________________________________________________________
+..............................................................................................................................
+..............................................................................................................................
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<style>
+    @charset "UTF-8";
+
+    * {
+        box-sizing: border-box
+    }
+
+    /* Variáveis de Cores*/
+    :root {
+        --fundo: #0F172A;
+        --cartoes: #1E293B;
+        --borda_linha: #334155;
+        --texto_princ: #F1F5F9;
+        --texto_segund: #94A3B8;
+
+        --verde: #4ADE80;
+        --vermelho: #F87171;
+        --amarelo: #FBBF24;
+        --azul: #38BDF8
+    }
+
+    body {
+        margin: 0;
+        background-color: var(--fundo);
+        color: var(--texto_princ);
+        font-family: system-ui, "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    main {
+        margin: auto;
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+    }
+
+    .subtexto {
+        margin: 4px 0 0;
+        font-size: 14px;
+        color: var(--texto_segund);
+    }
+
+    .modo {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: bolder;
+        background: #1e3a5f;
+        color: #bae6fd;
+    }
+
+    /*Estilização da primeira sessão*/
+    section {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: grid;
+        gap: 16px;
+    }
+
+    .cartoes {
+        background: var(--cartoes);
+        border: 1px solid var(--borda_linha);
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    .textocartoes {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--texto_segund);
+    }
+
+    .numeros {
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    /*Estilização da segunda sessão*/
+
+    .semaforo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+
+    }
+
+    .cartaosemaforo {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+
+        background: var(--cartoes);
+        border: 1px solid var(--borda_linha);
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    .estado {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    /* Estilização da sessão de gráficos*/
+
+    .cartaogrande {
+        display: flex;
+        gap: 14px;
+        background: var(--cartoes);
+        border: 1px solid var(--borda_linha);
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .grafico {
+        position: relative;
+        height: 240px;
+    }
+</style>
+
+<body>
+    <main>
+        <!-- Cabeçalho do Dashboard.-->
+        <header>
+            <div>
+                <h1>Dashboard · Cruzamento</h1>
+                <p class="subtexto">Semáforo Inteligente · Estado, Contagem, Históricos e Alertas</p>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span class="modo">Modo: Adaptivo</span>
+            </div>
+        </header>
+
+        <!-- Sessão de Monitorização de Veículos, Espera, Fila max e Ciclos concluídos -->
+        <section class="semaforo">
+            <div class="cartoes">
+                <div class="textocartoes">Veículos hoje</div>
+                <div class="numeros">1248</div>
+                <div class="textocartoes">contados desde as 00:00</div>
+            </div>
+            <div class="cartoes">
+                <div class="textocartoes">Espera média</div>
+                <div class="numeros">18 s</div>
+                <div class="textocartoes">32% nemos que o ciclo fixo</div>
+            </div>
+            <div class="cartoes">
+                <div class="textocartoes">Fila máxima</div>
+                <div class="numeros">9 veíc.</div>
+                <div class="textocartoes">Via Oeste, às 18h</div>
+            </div>
+            <div class="cartoes">
+                <div class="textocartoes">Ciclos concluídos</div>
+                <div class="numeros">214</div>
+                <div class="textocartoes">Modo adaptivo</div>
+            </div>
+        </section>
+        
+        <!-- Sessão do Estado dos Semáforos -->
+        <section>
+            <div class="cartaosemaforo">
+                <svg viewBox="0 0 40 100" width="44" height="110" aria-hidden="true">
+                    <rect width="40" height="100" rx="10" fill="#0B1220" />
+                    <circle id="luz-{{ v }}-r" cx="20" cy="20" r="11" fill="#4A2323" />
+                    <circle id="luz-{{ v }}-a" cx="20" cy="50" r="11" fill="#4A3F17" />
+                    <circle id="luz-{{ v }}-v" cx="20" cy="80" r="11" fill="#14532D" />
+                </svg>
+                <div>
+                    <div class="textocartoes">Norte</div>
+                    <div class="estado">--</div> <!--EStado-->
+                    <div style="font-size: 13px; margin-top: 6px;">14 s restantes</div>
+                    <div class="textocartoes">1 veículos na fila</div>
+                </div>
+            </div>
+
+            <div class="cartaosemaforo">
+                <svg viewBox="0 0 40 100" width="44" height="110" aria-hidden="true">
+                    <rect width="40" height="100" rx="10" fill="#0B1220" />
+                    <circle id="luz-{{ v }}-r" cx="20" cy="20" r="11" fill="#4A2323" />
+                    <circle id="luz-{{ v }}-a" cx="20" cy="50" r="11" fill="#4A3F17" />
+                    <circle id="luz-{{ v }}-v" cx="20" cy="80" r="11" fill="#14532D" />
+                </svg>
+                <div>
+                    <div class="textocartoes">Sul</div>
+                    <div class="estado">--</div> <!--EStado-->
+                    <div style="font-size: 13px; margin-top: 6px;">14 s restantes</div>
+                    <div class="textocartoes">1 veículos na fila</div>
+                </div>
+            </div>
+
+            <div class="cartaosemaforo">
+                <svg viewBox="0 0 40 100" width="44" height="110" aria-hidden="true">
+                    <rect width="40" height="100" rx="10" fill="#0B1220" />
+                    <circle id="luz-{{ v }}-r" cx="20" cy="20" r="11" fill="#4A2323" />
+                    <circle id="luz-{{ v }}-a" cx="20" cy="50" r="11" fill="#4A3F17" />
+                    <circle id="luz-{{ v }}-v" cx="20" cy="80" r="11" fill="#14532D" />
+                </svg>
+                <div>
+                    <div class="textocartoes">Este</div>
+                    <div class="estado">--</div> <!--EStado-->
+                    <div style="font-size: 13px; margin-top: 6px;">14 s restantes</div>
+                    <div class="textocartoes">1 veículos na fila</div>
+                </div>
+            </div>
+
+            <div class="cartaosemaforo">
+                <svg viewBox="0 0 40 100" width="44" height="110" aria-hidden="true">
+                    <rect width="40" height="100" rx="10" fill="#0B1220" />
+                    <circle id="luz-{{ v }}-r" cx="20" cy="20" r="11" fill="#4A2323" />
+                    <circle id="luz-{{ v }}-a" cx="20" cy="50" r="11" fill="#4A3F17" />
+                    <circle id="luz-{{ v }}-v" cx="20" cy="80" r="11" fill="#14532D" />
+                </svg>
+                <div>
+                    <div class="textocartoes">Oeste</div>
+                    <div class="estado">--</div> <!--EStado-->
+                    <div style="font-size: 13px; margin-top: 6px;">14 s restantes</div>
+                    <div class="textocartoes">1 veículos na fila</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão dos Gráficos -->
+        <section>
+            <div class="cartaogrande">
+                <h2>Espera média por hora: Adaptivo vs Ciclo Fixo (s)</h2>
+                <div class="grafico"></div>
+            </div>
+            <div class="cartaogrande">
+                <h2>Fluxo de veículos por hora</h2>
+                <div class="grafico"></div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
